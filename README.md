@@ -1,6 +1,6 @@
 # Mailing Control
 
-Sistema web capaz de consultar, incluir, alterar, deletar e importar XML utilizando as ferramentas de SaaS do Firebase.
+Sistema web capaz de consultar, incluir, alterar e deletar registros utilizando as ferramentas de SaaS do Firebase.
 
 ## Finalidade
 
