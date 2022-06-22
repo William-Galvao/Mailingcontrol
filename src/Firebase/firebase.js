@@ -7,12 +7,12 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCwl1uDXkNxBs0HT7kpv9VKjrkUIMeZwVo",
-  authDomain: "mailing-control.firebaseapp.com",
-  projectId: "mailing-control",
-  storageBucket: "mailing-control.appspot.com",
-  messagingSenderId: "782419122551",
-  appId: "1:782419122551:web:bee36b1c38be927a3d6972",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
