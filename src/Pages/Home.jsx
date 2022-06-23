@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../Components/Button";
 import { logout } from "../Firebase/firebase";
 
 export default function Home() {
@@ -8,10 +9,9 @@ export default function Home() {
       <div>
         <Link to="/newdata">Novo Registro</Link>
       </div>
-
-      <button type="button" class="btn btn-danger" onClick={logout}>
+      <Button color="danger" onClick={logout}>
         Sair
-      </button>
+      </Button>
     </div>
   );
 }

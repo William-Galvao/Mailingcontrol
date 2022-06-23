@@ -1,3 +1,4 @@
+import Button from "../Components/Button";
 import Container from "../Components/Container";
 import { UFList } from "../Components/Lists";
 
@@ -24,6 +25,7 @@ export default function NewData() {
           ))}
         </select>
       </div>
+      <Button color="dark">Cadastrar</Button>
     </Container>
   );
 }
