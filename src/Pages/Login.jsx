@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword } from "../Firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Button from "../Components/Button";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,7 +17,7 @@ export default function Login() {
     if (user) {
       navigate("/");
     }
-  }, [user, loading]);
+  }, [user, loading, navigate]);
 
   return (
     <div className="container vh-100 d-flex justify-content-center align-items-center">
@@ -44,12 +43,13 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <Button
-          color="dark"
+        <button
+          type="submit"
+          className="btn btn-dark"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Acessar
-        </Button>
+        </button>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ function App() {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
-  const RequireAuth = ({ children }) => {
+  const RequiredAuth = ({ children }) => {
     return user ? children : navigate("/login");
   };
 
@@ -20,17 +20,17 @@ function App() {
         <Route element={<Login />} path="/login" />
         <Route
           element={
-            <RequireAuth>
+            <RequiredAuth>
               <Home />
-            </RequireAuth>
+            </RequiredAuth>
           }
           path="/"
         />
         <Route
           element={
-            <RequireAuth>
+            <RequiredAuth>
               <NewData />
-            </RequireAuth>
+            </RequiredAuth>
           }
           path="/newdata"
         />

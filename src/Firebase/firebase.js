@@ -5,6 +5,7 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -17,6 +18,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const logInWithEmailAndPassword = async (email, password) => {
   try {
@@ -41,4 +43,4 @@ const logout = () => {
   signOut(auth);
 };
 
-export { auth, logInWithEmailAndPassword, sendPasswordReset, logout };
+export { auth, logInWithEmailAndPassword, sendPasswordReset, logout, db };
