@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./Firebase/firebase";
+import NewData from "./Pages/NewData";
 
 function App() {
   const [user] = useAuthState(auth);
@@ -24,6 +25,14 @@ function App() {
             </RequireAuth>
           }
           path="/"
+        />
+        <Route
+          element={
+            <RequireAuth>
+              <NewData />
+            </RequireAuth>
+          }
+          path="/newdata"
         />
       </Routes>
     </div>
