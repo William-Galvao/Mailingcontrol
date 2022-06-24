@@ -1,5 +1,6 @@
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { db } from "../Firebase/firebase";
 
 export default function AllData() {
@@ -57,7 +58,9 @@ export default function AllData() {
                       <button className="dropdown-item">Ligar</button>
                     </li>
                     <li>
-                      <button className="dropdown-item">Editar</button>
+                      <Link to={`/editdata/${company.id}`}>
+                        <button className="dropdown-item">Editar</button>
+                      </Link>
                     </li>
                     <li>
                       <button

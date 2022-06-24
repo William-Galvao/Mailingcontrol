@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./Firebase/firebase";
 import NewData from "./Pages/NewData";
+import EditData from "./Pages/EditData";
 
 function App() {
   const [user] = useAuthState(auth);
@@ -33,6 +34,14 @@ function App() {
             </RequiredAuth>
           }
           path="/newdata"
+        />
+        <Route
+          element={
+            <RequiredAuth>
+              <EditData />
+            </RequiredAuth>
+          }
+          path="/editdata/:id"
         />
       </Routes>
     </div>
