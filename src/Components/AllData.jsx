@@ -28,7 +28,7 @@ export default function AllData() {
           <th scope="col">Empresa</th>
           <th scope="col">CNPJ</th>
           <th scope="col">Estado</th>
-          <th scope="col">Ação</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -39,16 +39,38 @@ export default function AllData() {
               <td>{company.CNPJ}</td>
               <td>{company.Estado}</td>
               <td>
-                <button className="btn btn-primary m-1">Ligar</button>
-                <button className="btn btn-dark m-1">Editar</button>
-                <button
-                  className="btn btn-danger m-1"
-                  onClick={() => {
-                    handleDelete(company.id);
-                  }}
-                >
-                  Deletar
-                </button>
+                <div class="dropdown">
+                  <button
+                    className="btn btn-dark dropdown-toggle btn-sm"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Ações
+                  </button>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <button className="dropdown-item">Ligar</button>
+                    </li>
+                    <li>
+                      <button className="dropdown-item">Editar</button>
+                    </li>
+                    <li>
+                      <button
+                        className="dropdown-item"
+                        onClick={() => {
+                          handleDelete(company.id);
+                        }}
+                      >
+                        Deletar
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </td>
             </tr>
           );
