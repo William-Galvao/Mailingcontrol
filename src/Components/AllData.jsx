@@ -35,7 +35,7 @@ export default function AllData() {
       <tbody>
         {companies.map((company) => {
           return (
-            <tr>
+            <tr key={company.id}>
               <td>{company.Empresa}</td>
               <td>{company.CNPJ}</td>
               <td>{company.Estado}</td>
@@ -58,7 +58,10 @@ export default function AllData() {
                       <button className="dropdown-item">Ligar</button>
                     </li>
                     <li>
-                      <Link to={`/editdata/${company.id}`}>
+                      <Link
+                        style={{ textDecoration: "none" }}
+                        to={`/editdata/${company.id}`}
+                      >
                         <button className="dropdown-item">Editar</button>
                       </Link>
                     </li>
